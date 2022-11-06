@@ -1,0 +1,294 @@
+﻿@model DpizzaProject.Models.PizzaDataTb
+
+@{
+    ViewData["Title"] = "orderpage";
+    Layout = "layout3";
+    ViewBag.id = Html.DisplayFor(m => m.PizzaId);
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<style>
+    lable {
+        color: white;
+    }
+</style>
+
+<form asp-action="orderstatus" onsubmit="alert('Payment sucessfull  :)')">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Html.DisplayFor(m=>m.Img)" width="100%" style="border:solid white;margin-top:50px;border-radius:50px" />
+            
+
+            <br />
+            <br />
+
+            <label style="color:white">No of Quantity</label>
+            <input type="number" name="quantity" required min="1" max="5" pattern="[1-5]" title="We Cannot Give pizza's more than 5" placeholder="no.of pizza" id="id1" onkeyup="myFunction()" class="form-control" />
+            
+            <br />
+            <div>
+                <h3>
+                    <img src="\images\slice-removebg-preview.png" width="50%" style="margin-left:100px" />
+                    <select id="slice" required name="slice" class="form-control btn btn-light" style="color:black;text-align:center;font-size:20px;margin-left:20px">
+                        <option value="">No of slices</option>
+                        <option value="4">4</option>
+                        <option value="8">8</option>
+                        <option value="12">12</option>
+
+                    </select>
+                    <br />
+                    <br />
+                </h3>
+            </div>
+        </div>
+
+        <!------------------------------------------------------------------------------------------------------------->
+        <div class="col-md-4" style="color:white;text-align:left;margin-top:50px">
+            <div>
+                <h3>
+                    <br />
+                    Name:  @Html.DisplayFor(m=>m.PizzaName)<br /><br />
+                    Price: @Html.DisplayFor(m=>m.PizzaPrice)
+                    <br /><br />
+                    <h4 style="text-align:justified;color:white">
+                        Speciallity: <br />@Html.DisplayFor(m=>m.Discription)<br />
+                    </h4>
+                    <br />
+                </h3>
+            </div>
+
+        </div>
+
+        <!------------------------------------------------------------------>
+        <div class="col-md-4">
+
+            <div>
+                <img src="\images\toppings2-removebg-preview.png" height="350px" style="margin-left:100px" />
+                <br />
+                <br />
+                <select id="toppings" name="toppings" class="form-control btn btn-light  required" style="color:black;text-align:center;font-size:20px;margin-left:100px" title="please choose toppings">
+                    <option value="">Select Toppings</option>
+                    <option value="chesse"> <i style='font-size:24px' class='fas'></i>cheese</option>
+                    <option value="onion">onion</option>
+                    <option value="chilly flaks">chillyflaks</option>
+
+                </select>
+                
+
+
+            </div>
+
+
+            <input value="@Html.DisplayFor(m=>m.PizzaId)" name="id" type="hidden" />
+        </div>
+
+
+    </div>
+
+    <h2 style="color:white"> Few steps to grab your Pizza</h2>
+
+    <div class="col-md-12">
+        <div>
+
+            <div class="form-group">
+                <label style="color:white">Enter Name</label>
+                <input class="form-control" required name="name" pattern="[A-Za-z]+" title=" dear customer Your input not matching this field" placeholder="Enter Your Name" />
+            </div>
+            <div class="form-group">
+                <label style="color:white">Enter Contact Number</label>
+                <input name="number" required class="form-control" pattern="[0-9]{10}" title=" dear customer Your input not matching this field" placeholder="Contact Number" />
+            </div>
+
+            <div class="form-group">
+                <label style="color:white">Enter Your Address</label>
+                <input name="address" required placeholder="Enter Your Address" title=" dear customer Your input not matching this field" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label style="color:white">Land Mark</label>
+                <input name="landmark" required placeholder="Specify Landmark" title=" dear customer Your input not matching this field" class="form-control" />
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label style="color:white">Enter Name in card</label>
+                <input class="form-control" required pattern="[A-Za-z]+" title=" dear customer Your input not matching this field" placeholder="Enter Your Name" />
+            </div>
+            <br />
+            <div class="form-group">
+                <label style="color:white">card Number</label>
+                <input class="form-control" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" title=" dear customer Your input not matching this field" placeholder="1111-1111-1111-1111" />
+            </div>
+            <br />
+
+            <div class="form-group">
+                <select class="btn  btn-warning form-control" onchange="myFunction()" name="month" id="check" required>
+                    <option value="">select exp month</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July </option>
+                    <option value="August">August </option>
+                    <option value="September">September</option>
+                    <option value="October">October </option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="expyear">Exp Year</label>
+                        <select class="btn btn-warning form-control" name="month" id="month" required>
+                            <option value="">select exp month</option>
+                            <option value="January">2022</option>
+                            <option value="February">2023</option>
+                            <option value="March">2024</option>
+                            <option value="April">2025</option>
+                            <option value="May">2026</option>
+                            <option value="June">2027</option>
+                            <option value="July">2028 </option>
+                            <option value="August">2029 </option>
+                            <option value="September">2031</option>
+                            <option value="October">2032 </option>
+                            <option value="November">2033</option>
+                            <option value="December">2034</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-4">
+                        <label style="color:white" for="cvv">CVV</label>
+                        <input class="form-control" required type="text" id="cvv" pattern="[0-9]{3}" placeholder="352">
+                    </div>
+                    <div class="col-md-3">
+                        <br />
+                        @* <div style="border: dashed white;text-align:center ;color:white">
+                        <p> Total Price: <span  id="price"></span></p>
+                        <input id="price" name="pprice" type="hidden" />
+
+                        </div>*@
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <br>
+
+            <table class="table table-bordered border-dashed">
+                <thead>
+                    <tr style="color:white;font-size:20p ">
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr style="color:white;font-size:20px">
+                        <td>@Html.DisplayFor(m=>m.PizzaName)</td>
+                        <td> <p> <span id="pass"></span></p></td>
+                        <td> <p> <span id="price"></span></p></td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+        <div clclass="col-md-3">
+        </div>
+
+    </div>
+
+
+
+    <input type="checkbox" style="padding:20px" required /><span style="color:white;font-size:20px">
+
+        On confirming this you cannot cancle the order
+    </span>
+
+    <div>
+        <button type="submit" value="OrderNow" asp-action="orderpage" asp-controller="Order" asp-route-id="@ViewBag.id" class="form-control form-group btn btn-warning">Order Now</button>
+
+
+
+    </div>
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+<script>
+
+    function myFunction() {
+        var price = document.getElementById("id1").value;
+        var pricePerKg = parseInt(@Html.DisplayFor(m=>m.PizzaPrice));
+
+
+        if (price >= 1) {
+
+
+            if(price <=5){
+                 document.getElementById("price").innerHTML = price * pricePerKg;
+            document.getElementById("pass").innerHTML = price;
+
+
+            }
+            else {
+                alert('You Are not Allowed to book more than 5 pizza');
+            }
+
+        }
+        
+        else {
+            alert('Entered Number Is Invalid Kindly Recheck it');
+        }
+
+    }
+
+
+    //function check() {
+    //   var id=document.getElementById("toppings");
+    //   if(var == null){
+    //       alert(
+    //   }
+
+    //}
+
+    function quantity() {
+
+        var quantity = document.getElementById("id1").value;
+        document.getElementById("pass").innerHTML = quantity;
+    }
+
+
+    function preventBack() { window.history.forward(); }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { return "you lose data " };
+
+
+
+
+
+</script>

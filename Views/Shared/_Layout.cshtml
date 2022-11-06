@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/finalimage.png" type="image/icon type">
+    <title style="background-color:black;color:white">D'Pizza</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DpizzaProject.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="row navbar" style="width:102%">
+                <div class="col-md-4"><img src="~/images/finalimage.png" alt="Logo Image" style="margin-right:100px" /> </div>
+                <div class="col-md-4"><h1 style="font-family:cursive"><a style="text-decoration:none;color:white;text-align:center" asp-action="HomePage" asp-controller="Pizza"><b>D'Pizza</b></a></h1></div>
+                <div class="col-md-4">
+                    <form asp-controller="Pizza" asp-action="HomePage">
+                        <div class="row d-flex">
+
+
+                            <select name="veg" class=" btn btn-danger" style="width:100px;margin-left:400px" onchange="this.form.submit()">
+                             
+                                <option value="" style="font-size:20px">choose me..!</option>
+                                <option value="veg">Veg</option>
+                                <option value="nonveg">Non Veg</option>
+                                <option value="">Both</option>
+                            </select>
+
+
+                            @* <div class="col-md-4">
+                            <input type="submit" name="veg" value="veg" class="form-control btn btn-success" />
+                            </div>
+                            <div class="col-md-4">
+                            <input type="submit" name="veg" value="nonveg" class="form-control btn btn-danger" />
+                            </div>
+                            <div class="col-md-4">
+                            <input type="submit" name="both" value="both" class="form-control btn btn-warning" />
+                            </div>*@
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+          
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer" style="border: dashed grey" >
+
+        <div class="row">
+            <div class="col-md-4 d-flex">
+               
+               
+            </div>
+            <div class="col-md-4">
+              
+                <p style="color:grey;text-align">D'pizza-2022
+                </p>
+            </div>
+          
+            <div class="col-md-4"></div>
+
+        </div>
+
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

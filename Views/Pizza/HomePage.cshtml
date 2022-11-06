@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DpizzaProject.Models.PizzaDataTb>
+
+@{
+    ViewData["Title"] = "HomePage";
+}
+<style>
+
+    .class{
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+    }
+</style>
+
+<div class="row">
+    <div class="class">
+        <br>
+        <br />
+        <br />
+        <h1 style="color:white;text-align:center;font-family:mt">Welcome to D'Pizza</h1>
+        <h1 style="color:white;text-align:center;font-family:mt">All you need is love and pizza</h1>
+        <br>
+        <br />
+        <br />
+    
+        <div class="col-md-12">
+        <div class="container d-flex flex-wrap"> <!------------------------>
+            @foreach (var item in Model)
+            {
+                <div class="card card-deck zoom" style="border-radius:15px ; margin-left:20px;margin-top:10px">
+                    <div class="card-img">
+                        <img src="@item.Img" style="width:100%;height:100%" />
+                    </div>
+
+                    <div class="card-body">
+                        <div class="ctext" style=" background-color:#465AFF;color:white">
+                            <h5>@item.PizzaName</h5>
+                        </div>
+
+                        <div class="menutext" style="text-align:left;color:grey;height:20px">
+                            <p>@item.Discription</p>
+                            <hr>
+                        </div><br><br><br><br>
+
+
+                        <div class="d-flex">
+                            <div style="text-align:left;color:grey" class="col-2"><img src="@item.PizzaType" width="20px" /></div>
+                            <div style="text-align:left;color:grey" class="col-6">@item.PizzCrust</div>
+                            <div style="text-align:left;color:grey" class="col-4">@item.PizzaPrice</div>
+                            <hr>
+                        </div>
+                        <div>
+                            <a asp-action="orderpage" asp-controller="Order" asp-route-id="@item.PizzaId" class="btn btn-success">Order Now</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+   
+
+    </div>
+
+  
+</div>
+
+                                

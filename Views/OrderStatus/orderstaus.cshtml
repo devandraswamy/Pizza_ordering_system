@@ -1,0 +1,82 @@
+﻿@model IEnumerable<DpizzaProject.Models.Orderdatatale>
+
+@{
+    ViewData["Title"] = "orderstaus";
+    Layout = "layout2";
+}
+
+
+
+
+
+    <h1 style="color:white;text-align:center;font-family:Mt">orderstatus</h1>
+
+
+    <table class="table table-bordered">
+        <thead style="color:white;font-size:30px">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Orderid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pizzaid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customername)
+                </th>
+                <th>
+                    status
+                </th>
+                <th>
+                    Progress
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style="color:white;font-size:30px">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Orderid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pizzaid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customername)
+                    </td>
+                    <td>
+                        Order confirmed
+                    </td>
+
+                    <td>
+                        <span id="demo">preparing</span>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    @*<img src="/images/pngtree-doodle-pizza-ingredients-ingredient-national-png-image_8697430-removebg-preview.png" width="300px" />
+    <img src="/images/pngtree-doodle-pizza-ingredients-ingredient-national-png-image_8697430-removebg-preview.png" width="300px" />
+    <img src="/images/pngtree-doodle-pizza-ingredients-ingredient-national-png-image_8697430-removebg-preview.png" width="300px" />
+    <img src="/images/pngtree-doodle-pizza-ingredients-ingredient-national-png-image_8697430-removebg-preview.png" width="300px" />
+    *@
+    <img src="~/images/pizzaprep.gif" width="50%" height="300px" style="border-radius:50px;margin-left:250px" />
+
+    <script>
+        window.onbeforeunload = function () {
+            return "Data will be lost if you leave the page, are you sure?";
+        };
+    </script>
+
+
+
+

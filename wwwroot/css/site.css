@@ -1,0 +1,105 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+  
+    background-image: url('../images/photo-1513104890138-7c749659a591.jpg');
+}
+.navbar {
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: #3A1812;
+    text-align: center;
+}
+
+    .navbar img {
+        height: 15%;
+        width: 20%
+    }
+
+.card {
+    width: 30%;
+    padding: 10px;
+    box-shadow: 20px 20px 50px grey;
+    border: solid #41C9A1;
+    column-gap: 50px;
+    overflow:hidden;
+}
+@media screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+    }
+
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+
+
+    .card button:hover {
+        opacity: 0.7;
+    }
+    /*Name of the pizza*/
+    .ctext {
+        text-align: center;
+        font-family: 'Matura MT Script Capitals'
+    }
+    /*things inside the card*/
+    .menutext {
+        font-family: 'Yu Gothic UI'
+    }
+
+
+    .zoom {
+        transition: transform 0.5s;
+    }
+
+        .zoom:hover {
+            /*-ms-transform: scale(1);*/ /* IE 9 */
+            /*-webkit-transform: scale(1.5);*/ /* Safari 3-8 */
+            transform: scale(1.1);
+        }
+
+    .face2 {
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+    }
+.footer {
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:auto;
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700");
+$gradient: linear-gradient( 135deg, rgba(91, 36, 122, 0.45) 0%, rgba(27, 206, 223, 0.55) 100% );
+
+
+label{
+    color:white
+}
+
